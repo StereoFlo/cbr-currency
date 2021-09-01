@@ -6,7 +6,7 @@ use DateTime;
 use Stereoflo\CbrCurrency\HttpClient\HttpClientInterface;
 use Stereoflo\CbrCurrency\Parser\ParserInterface;
 
-final class DailyRate
+final class DailyCurrencies
 {
     const URI_XML_DAILY = 'https://www.cbr.ru/scripts/XML_daily.asp';
 
@@ -51,7 +51,7 @@ final class DailyRate
         return false;
     }
 
-    public function get(string $charCode): ?DailyRateItem
+    public function get(string $charCode): ?DailyCurrenciesItem
     {
         $charCode = strtoupper($charCode);
 

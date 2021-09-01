@@ -5,7 +5,7 @@ namespace Stereoflo\CbrCurrency;
 use DateTime;
 use SimpleXMLElement;
 
-final class DailyRateItem
+final class DailyCurrenciesItem
 {
     private DateTime $date;
     private string $value;

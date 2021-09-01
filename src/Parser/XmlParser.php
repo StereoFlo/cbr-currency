@@ -4,7 +4,7 @@ namespace Stereoflo\CbrCurrency\Parser;
 
 use DateTime;
 use SimpleXMLElement;
-use Stereoflo\CbrCurrency\DailyRateItem;
+use Stereoflo\CbrCurrency\DailyCurrenciesItem;
 
 final class XmlParser implements ParserInterface
 {
@@ -15,7 +15,7 @@ final class XmlParser implements ParserInterface
         $date = DateTime::createFromFormat('d.m.Y', (string) $simple->attributes()->Date);
 
         foreach ($simple->Valute as $row) {
-            $item = new DailyRateItem($date, $row);
+            $item = new DailyCurrenciesItem($date, $row);
             $data[$item->getCharCode()] = $item;
         }
 
