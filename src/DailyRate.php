@@ -6,7 +6,7 @@ use DateTime;
 use Stereoflo\CbrCurrency\HttpClient\HttpClientInterface;
 use Stereoflo\CbrCurrency\Parser\ParserInterface;
 
-class DailyRate
+final class DailyRate
 {
     const URI_XML_DAILY = 'https://www.cbr.ru/scripts/XML_daily.asp';
 

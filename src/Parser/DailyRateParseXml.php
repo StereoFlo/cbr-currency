@@ -6,7 +6,7 @@ use DateTime;
 use SimpleXMLElement;
 use Stereoflo\CbrCurrency\DailyRateItem;
 
-class DailyRateParseXml implements ParserInterface
+final class DailyRateParseXml implements ParserInterface
 {
     public function parse(string $xml): array
     {
