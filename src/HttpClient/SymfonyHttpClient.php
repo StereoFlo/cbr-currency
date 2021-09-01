@@ -4,7 +4,7 @@ namespace Stereoflo\CbrCurrency\HttpClient;
 
 use Exception;
 
-class HttpClient implements HttpClientInterface
+class SymfonyHttpClient implements HttpClientInterface
 {
     private array $query = [];
     private ?Exception $requestError;
