@@ -6,7 +6,7 @@ use Exception;
 
 interface HttpClientInterface
 {
-    public function execute(string $uri = null): bool;
+    public function execute(string $uri): bool;
 
     public function getRequestError(): ?Exception;
 

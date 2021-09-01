@@ -6,19 +6,13 @@ use Exception;
 
 class HttpClient implements HttpClientInterface
 {
-    const URI_XML_DAILY = 'https://www.cbr.ru/scripts/XML_daily.asp';
-
     private array $query = [];
     private ?Exception $requestError;
     private ?string $responseBody;
     private bool $isRequestSuccess = false;
 
-    public function execute(string $uri = null): bool
+    public function execute(string $uri): bool
     {
-        if (!$uri) {
-            $uri = self::URI_XML_DAILY;
-        }
-
         try {
             $this->makeRequest($uri);
             $this->isRequestSuccess = true;

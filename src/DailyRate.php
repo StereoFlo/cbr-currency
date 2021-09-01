@@ -3,12 +3,13 @@
 namespace Stereoflo\CbrCurrency;
 
 use DateTime;
-use Stereoflo\CbrCurrency\HttpClient\HttpClient;
 use Stereoflo\CbrCurrency\HttpClient\HttpClientInterface;
 use Stereoflo\CbrCurrency\Parser\ParserInterface;
 
 class DailyRate
 {
+    const URI_XML_DAILY = 'https://www.cbr.ru/scripts/XML_daily.asp';
+
     protected DateTime $date;
 
     protected HttpClientInterface $httpClient;
@@ -35,7 +36,7 @@ class DailyRate
             $this->httpClient->addQuery('date_req', $this->date->format('d/m/Y'));
         }
 
-        $this->httpClient->execute(HttpClient::URI_XML_DAILY);
+        $this->httpClient->execute(self::URI_XML_DAILY);
         if (!$this->httpClient->isRequestSuccess()) {
 
             return false;
