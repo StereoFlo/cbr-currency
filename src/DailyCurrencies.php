@@ -11,11 +11,8 @@ final class DailyCurrencies
     const URI_XML_DAILY = 'https://www.cbr.ru/scripts/XML_daily.asp';
 
     protected DateTime $date;
-
     protected HttpClientInterface $httpClient;
-
     protected ParserInterface $parser;
-
     protected array $data = [];
 
     public function __construct(HttpClientInterface $httpClient, ParserInterface $parser)
