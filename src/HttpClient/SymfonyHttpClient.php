@@ -3,6 +3,7 @@
 namespace Stereoflo\CbrCurrency\HttpClient;
 
 use Exception;
+use Symfony\Component\HttpClient\HttpClient;
 
 final class SymfonyHttpClient implements HttpClientInterface
 {
@@ -48,10 +49,10 @@ final class SymfonyHttpClient implements HttpClientInterface
 
     private function makeRequest(string $uri): void
     {
-        $client = \Symfony\Component\HttpClient\HttpClient::create();
-        $res = $client->request('GET', $this->buildUri($uri));
+        $client                 = HttpClient::create();
+        $response               = $client->request('GET', $this->buildUri($uri));
         $this->isRequestSuccess = true;
-        $this->responseBody = $res->getContent();
+        $this->responseBody     = $response->getContent();
     }
 
     private function buildUri(string $uri): string
