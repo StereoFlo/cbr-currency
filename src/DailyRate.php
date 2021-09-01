@@ -32,11 +32,9 @@ final class DailyRate
 
     public function retrieve(): bool
     {
-        if ($this->date) {
-            $this->httpClient->addQuery('date_req', $this->date->format('d/m/Y'));
-        }
-
+        $this->httpClient->addQuery('date_req', $this->date->format('d/m/Y'));
         $this->httpClient->execute(self::URI_XML_DAILY);
+
         if (!$this->httpClient->isRequestSuccess()) {
 
             return false;
