@@ -9,7 +9,7 @@ use Stereoflo\CbrCurrency\Parser\ParserInterface;
 
 class DailyRate
 {
-    protected ?DateTime $date = null;
+    protected DateTime $date;
 
     protected HttpClientInterface $httpClient;
 
