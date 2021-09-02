@@ -58,4 +58,12 @@ final class DailyCurrencies
 
         return $this->data[$charCode];
     }
+
+    /**
+     * @return DailyCurrenciesItem[]
+     */
+    public function getAll(): array
+    {
+        return $this->data;
+    }
 }
