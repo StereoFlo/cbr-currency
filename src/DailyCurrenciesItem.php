@@ -4,6 +4,7 @@ namespace Stereoflo\CbrCurrency;
 
 use DateTime;
 use SimpleXMLElement;
+use function str_replace;
 
 final class DailyCurrenciesItem
 {
