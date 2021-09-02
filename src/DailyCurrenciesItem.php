@@ -8,7 +8,7 @@ use SimpleXMLElement;
 final class DailyCurrenciesItem
 {
     private DateTime $date;
-    private string $value;
+    private float $value;
     private string $valueId;
     private string $numCode;
     private string $charCode;
@@ -18,7 +18,7 @@ final class DailyCurrenciesItem
     public function __construct(DateTime $date, SimpleXMLElement $row)
     {
         $this->date     = $date;
-        $this->value    = (string) $row->Value;
+        $this->value    = (float) str_replace(',', '.', $row->Value);
         $this->name     = (string) $row->Name;
         $this->valueId  = (string) $row->attributes()->ID;
         $this->charCode = (string) $row->CharCode;
@@ -56,7 +56,7 @@ final class DailyCurrenciesItem
         return $this->name;
     }
 
-    public function getValue(): string
+    public function getValue(): float
     {
         return $this->value;
     }
