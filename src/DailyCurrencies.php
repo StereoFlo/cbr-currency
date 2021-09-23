@@ -37,10 +37,7 @@ final class DailyCurrencies
             return false;
         }
 
-        $xml    = $this->httpClient->getResponseBody();
-        $parser = $this->parser;
-
-        if ($this->data = $parser->parse($xml)) {
+        if ($this->data = $this->parser->parse($this->httpClient->getResponseBody())) {
 
             return true;
         }
